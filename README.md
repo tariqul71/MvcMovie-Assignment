@@ -3,7 +3,7 @@
 ASP.NET Core MVC Movie Management Application.
 
 ## Features
-- Display movie list
+- View movie list
 - Create, edit, and delete movies
 - Search movies
 - PostgreSQL database
@@ -15,3 +15,9 @@ ASP.NET Core MVC Movie Management Application.
 - PostgreSQL
 - Docker
 - Swagger
+
+## Run the Project
+1. Start Docker Desktop.
+2. Run: docker start mvc-postgres
+3. Run: dotnet run --launch-profile http
+4. Open the Movies page or Swagger UI.
