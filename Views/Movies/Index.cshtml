@@ -1,0 +1,5 @@
+@model IEnumerable<MvcMovie.Models.Movie>
+@{ ViewData["Title"] = "Movies"; }
+<h1>Movies</h1><p><a class="btn" asp-action="Create">Create New</a></p>
+<form asp-action="Index" method="get"><label>Genre</label><select name="movieGenre" asp-items="ViewBag.Genres"><option value="">All</option></select><label>Title</label><input name="searchString" value="@ViewBag.SearchString" placeholder="Search movies"/><button type="submit">Filter</button> <a asp-action="Index">Clear</a></form>
+<table><thead><tr><th>Title</th><th>Release Date</th><th>Genre</th><th>Price</th><th>Rating</th><th>Actions</th></tr></thead><tbody>@foreach (var item in Model) {<tr><td>@item.Title</td><td>@item.ReleaseDate.ToString("yyyy-MM-dd")</td><td>@item.Genre</td><td>@item.Price</td><td>@item.Rating</td><td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a> | <a asp-action="Details" asp-route-id="@item.Id">Details</a> | <a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td></tr>}</tbody></table>

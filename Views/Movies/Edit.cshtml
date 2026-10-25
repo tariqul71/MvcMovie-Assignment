@@ -1,0 +1,3 @@
+@model MvcMovie.Models.Movie
+@{ ViewData["Title"] = "Edit Movie"; }
+<h1>Edit Movie</h1><form asp-action="Edit" method="post"><input type="hidden" asp-for="Id"/><partial name="_MovieForm" model="Model"/><button type="submit">Save</button></form><p><a asp-action="Index">Back to List</a></p>
